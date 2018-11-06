@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="themeColor">#41DF9A</color>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <style name="MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--We will be using the toolbar so no need to show ActionBar-->
+        <!--<item name="windowActionBar">false</item>-->
+        <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">#41DF9A</item>
+        <item name="android:colorPrimary">#41DF9A</item>
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">#34B27B</item>
+        <item name="android:colorPrimaryDark">#34B27B</item>
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">#41DF9A</item>
+        <item name="android:colorAccent">#41DF9A</item>
+        <!-- You can also set colorControlNormal, colorControlActivated
+            colorControlHighlight and colorSwitchThumbNormal. -->
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+        <item name="android:actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+        <item name="actionBarStyle">@style/AppTheme.Widget.ActionBar</item>
+        <item name="android:actionBarStyle">@style/AppTheme.Widget.ActionBar</item>
+        <item name="android:fontFamily">@font/regular_semibold</item>
+        <item name="fontFamily">@font/regular_semibold</item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
+
+    <style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="AppTheme.Widget.ActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/AppTheme.Widget.ActionBar.Title</item>
+        <item name="android:titleTextStyle">@style/AppTheme.Widget.ActionBar.Title</item>
+        <item name="android:background">#41DF9A</item>
+    </style>
+
+    <style name="AppTheme.Widget.ActionBar.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

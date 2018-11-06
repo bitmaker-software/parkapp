@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.1">
+    <title>ParkappWeb.ApiIntegration.Embers.Mock – ParkApp v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
+    <script src="dist/sidebar_items-8b06ef2d98.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/doc/index.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+ParkApp      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ParkApp v0.0.1</small>
+ParkappWeb.ApiIntegration.Embers.Mock        
+          <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+      </h1>
+
+
+        <section id="moduledoc">
+<p>  Mock implementation of the Embers API. Used for testing.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_reservation/1">cancel_reservation(locator)</a>
+  </div>
+    <div class="summary-synopsis"><p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:cancel_reservation/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.cancel_reservation/1</code></a></p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_route/3">get_route(from, to, mode)</a>
+  </div>
+    <div class="summary-synopsis"><p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:get_route/3"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.get_route/3</code></a></p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#make_reservation/1">make_reservation(product_type)</a>
+  </div>
+    <div class="summary-synopsis"><p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:make_reservation/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.make_reservation/1</code></a></p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#payment1/1">payment1(barcode)</a>
+  </div>
+    <div class="summary-synopsis"><p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:payment1/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.payment1/1</code></a></p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#payment2/1">payment2(context_token)</a>
+  </div>
+    <div class="summary-synopsis"><p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:payment2/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.payment2/1</code></a></p>
+</div>
+</div>
+  </div>
+          
+        </section>
+
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+<div class="detail" id="cancel_reservation/1">
+    <div class="detail-header">
+    <a href="#cancel_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">cancel_reservation(locator)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:cancel_reservation/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.cancel_reservation/1</code></a>.</p>
+  </section>
+</div>
+<div class="detail" id="get_route/3">
+    <div class="detail-header">
+    <a href="#get_route/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_route(from, to, mode)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-8" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:get_route/3"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.get_route/3</code></a>.</p>
+  </section>
+</div>
+<div class="detail" id="make_reservation/1">
+    <div class="detail-header">
+    <a href="#make_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">make_reservation(product_type)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:make_reservation/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.make_reservation/1</code></a>.</p>
+  </section>
+</div>
+<div class="detail" id="payment1/1">
+    <div class="detail-header">
+    <a href="#payment1/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">payment1(barcode)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:payment1/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.payment1/1</code></a>.</p>
+  </section>
+</div>
+<div class="detail" id="payment2/1">
+    <div class="detail-header">
+    <a href="#payment2/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">payment2(context_token)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp_web/api_integration/embers/mock.ex#cl-102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Callback implementation for <a href="ParkappWeb.ApiIntegration.Embers.Behaviour.html#c:payment2/1"><code class="inline">ParkappWeb.ApiIntegration.Embers.Behaviour.payment2/1</code></a>.</p>
+  </section>
+</div>
+        </section>
+
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-a0c90688fa.js"></script>
+  
+  </body>
+</html>
+

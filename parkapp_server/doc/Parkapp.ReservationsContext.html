@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.19.1">
+    <title>Parkapp.ReservationsContext – ParkApp v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-240d7fc7e5.css" />
+    <script src="dist/sidebar_items-8b06ef2d98.js"></script>
+    
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode')) document.body.className += ' night-mode'; } catch (e) { }</script>
+    <div class="main">
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Sidebar</span>
+</button>
+<button class="sidebar-button night-mode-toggle">
+  <span class="icon-theme" aria-hidden="true"></span>
+  <span class="sr-only">Toggle Theme</span>
+</button>
+<section class="sidebar">
+
+  <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/doc/index.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+ParkApp      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+  </a>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <input name="q" type="text" id="search-list" class="search-input" placeholder="Search" aria-label="Search" autocomplete="off" />
+  </form>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">ParkApp v0.0.1</small>
+Parkapp.ReservationsContext        
+          <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The Reservations context.</p>
+        </section>
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_reservation/1">change_reservation(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking reservation changes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_reservation_status_history/1">change_reservation_status_history(reservation_status_history)</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking reservation_status_history changes</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_reservation/1">create_reservation(attrs \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a reservation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_reservation_initial_state/1">create_reservation_initial_state(attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a reservation with the given attributes in the open state.
+  Creates the first entry in the status history</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_reservation_status_history/1">create_reservation_status_history(attrs \\ %{})</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a reservation_status_history</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_reservation_status_history/3">create_reservation_status_history(reservation_id, previous_status, next_status)</a>
+  </div>
+    <div class="summary-synopsis"><p>Creates a reservation_status_history</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deactivate_reservation_status_history/1">deactivate_reservation_status_history(reservation_id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets the active history for the given reservation and deactivates it</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_reservation/1">delete_reservation(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes a Reservation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_reservation_status_history/1">delete_reservation_status_history(reservation_status_history)</a>
+  </div>
+    <div class="summary-synopsis"><p>Deletes a ReservationStatusHistory</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_active_reservation_history/1">get_active_reservation_history(reservation_id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Retrieves from the database the active history for the given reservation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_current_reservation/1">get_current_reservation(device_id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Retrives the current reservation for the given device.
+  It makes sure the status history is correct and ignores the closed reservations</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation!/1">get_reservation!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single reservation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_status!/1">get_reservation_status!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single reservation_status</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_status_history!/1">get_reservation_status_history!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single reservation_status_history</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_type!/1">get_reservation_type!(id)</a>
+  </div>
+    <div class="summary-synopsis"><p>Gets a single reservation_type</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reservation_status/0">list_reservation_status()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of reservation_status</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reservation_types/0">list_reservation_types()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of reservation_types</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reservations/0">list_reservations()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of reservations</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_revervation_status_history/0">list_revervation_status_history()</a>
+  </div>
+    <div class="summary-synopsis"><p>Returns the list of revervation_status_history</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#move_to_closed_state/1">move_to_closed_state(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates the reservation to the closed state.
+  Creates the sixth and final entry in the status history. Deactivates the previous one</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#move_to_external_payment_state/1">move_to_external_payment_state(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates the reservation to the external payment state.
+  Creates the forth entry in the status history. Deactivates the previous one</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#move_to_in_park_state/1">move_to_in_park_state(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates the reservation to the in park state.
+  Creates the second entry in the status history. Deactivates the previous one</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#move_to_payment1_state/3">move_to_payment1_state(reservation, context_token, amount)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates the reservation to the payment1 state. Sets the context_token and amount.
+  Creates the third entry in the status history. Deactivates the previous one</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#move_to_payment2_state/1">move_to_payment2_state(reservation)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates the reservation to the payment2 state.
+  Creates the fifth entry in the status history. Deactivates the previous one</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_reservation/2">update_reservation(reservation, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates a reservation</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_reservation_after_payment/2">update_reservation_after_payment(reservation, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates a reservation using the payment changeset</p>
+</div>
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_reservation_status_history/2">update_reservation_status_history(reservation_status_history, attrs)</a>
+  </div>
+    <div class="summary-synopsis"><p>Updates a reservation_status_history</p>
+</div>
+</div>
+  </div>
+          
+        </section>
+
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Functions
+          </h1>
+<div class="detail" id="change_reservation/1">
+    <div class="detail-header">
+    <a href="#change_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">change_reservation(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-181" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking reservation changes.</p>
+<h2 id="change_reservation/1-examples" class="section-heading">
+  <a href="#change_reservation/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">change_reservation</span><span class="p" data-group-id="9123248238-1">(</span><span class="n">reservation</span><span class="p" data-group-id="9123248238-1">)</span><span class="w">
+</span><span class="p" data-group-id="9123248238-2">%</span><span class="nc" data-group-id="9123248238-2">Ecto.Changeset</span><span class="p" data-group-id="9123248238-2">{</span><span class="ss">source</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9123248238-3">%</span><span class="nc" data-group-id="9123248238-3">Reservation</span><span class="p" data-group-id="9123248238-3">{</span><span class="p" data-group-id="9123248238-3">}</span><span class="p" data-group-id="9123248238-2">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="change_reservation_status_history/1">
+    <div class="detail-header">
+    <a href="#change_reservation_status_history/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">change_reservation_status_history(reservation_status_history)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-293" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking reservation_status_history changes.</p>
+<h2 id="change_reservation_status_history/1-examples" class="section-heading">
+  <a href="#change_reservation_status_history/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">change_reservation_status_history</span><span class="p" data-group-id="3498633667-1">(</span><span class="n">reservation_status_history</span><span class="p" data-group-id="3498633667-1">)</span><span class="w">
+</span><span class="p" data-group-id="3498633667-2">%</span><span class="nc" data-group-id="3498633667-2">Ecto.Changeset</span><span class="p" data-group-id="3498633667-2">{</span><span class="ss">source</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3498633667-3">%</span><span class="nc" data-group-id="3498633667-3">ReservationStatusHistory</span><span class="p" data-group-id="3498633667-3">{</span><span class="p" data-group-id="3498633667-3">}</span><span class="p" data-group-id="3498633667-2">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="create_reservation/1">
+  
+    <span id="create_reservation/0"></span>
+  <div class="detail-header">
+    <a href="#create_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_reservation(attrs \\ %{})</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Creates a reservation.</p>
+<h2 id="create_reservation/1-examples" class="section-heading">
+  <a href="#create_reservation/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_reservation</span><span class="p" data-group-id="3569768304-1">(</span><span class="p" data-group-id="3569768304-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="3569768304-2">}</span><span class="p" data-group-id="3569768304-1">)</span><span class="w">
+</span><span class="p" data-group-id="3569768304-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3569768304-4">%</span><span class="nc" data-group-id="3569768304-4">Reservation</span><span class="p" data-group-id="3569768304-4">{</span><span class="p" data-group-id="3569768304-4">}</span><span class="p" data-group-id="3569768304-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_reservation</span><span class="p" data-group-id="3569768304-5">(</span><span class="p" data-group-id="3569768304-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="3569768304-6">}</span><span class="p" data-group-id="3569768304-5">)</span><span class="w">
+</span><span class="p" data-group-id="3569768304-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3569768304-8">%</span><span class="nc" data-group-id="3569768304-8">Ecto.Changeset</span><span class="p" data-group-id="3569768304-8">{</span><span class="p" data-group-id="3569768304-8">}</span><span class="p" data-group-id="3569768304-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="create_reservation_initial_state/1">
+    <div class="detail-header">
+    <a href="#create_reservation_initial_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_reservation_initial_state(attrs)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>create_reservation_initial_state(Map) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Creates a reservation with the given attributes in the open state.
+  Creates the first entry in the status history.</p>
+  </section>
+</div>
+<div class="detail" id="create_reservation_status_history/1">
+  
+    <span id="create_reservation_status_history/0"></span>
+  <div class="detail-header">
+    <a href="#create_reservation_status_history/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_reservation_status_history(attrs \\ %{})</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-228" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Creates a reservation_status_history.</p>
+<h2 id="create_reservation_status_history/1-examples" class="section-heading">
+  <a href="#create_reservation_status_history/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">create_reservation_status_history</span><span class="p" data-group-id="9197554741-1">(</span><span class="p" data-group-id="9197554741-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="9197554741-2">}</span><span class="p" data-group-id="9197554741-1">)</span><span class="w">
+</span><span class="p" data-group-id="9197554741-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9197554741-4">%</span><span class="nc" data-group-id="9197554741-4">ReservationStatusHistory</span><span class="p" data-group-id="9197554741-4">{</span><span class="p" data-group-id="9197554741-4">}</span><span class="p" data-group-id="9197554741-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_reservation_status_history</span><span class="p" data-group-id="9197554741-5">(</span><span class="p" data-group-id="9197554741-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="9197554741-6">}</span><span class="p" data-group-id="9197554741-5">)</span><span class="w">
+</span><span class="p" data-group-id="9197554741-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9197554741-8">%</span><span class="nc" data-group-id="9197554741-8">Ecto.Changeset</span><span class="p" data-group-id="9197554741-8">{</span><span class="p" data-group-id="9197554741-8">}</span><span class="p" data-group-id="9197554741-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="create_reservation_status_history/3">
+    <div class="detail-header">
+    <a href="#create_reservation_status_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">create_reservation_status_history(reservation_id, previous_status, next_status)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Creates a reservation_status_history.</p>
+  </section>
+</div>
+<div class="detail" id="deactivate_reservation_status_history/1">
+    <div class="detail-header">
+    <a href="#deactivate_reservation_status_history/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">deactivate_reservation_status_history(reservation_id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>deactivate_reservation_status_history(Integer) ::
+  {:ok, Parkapp.Reservations.ReservationStatusHistory}
+  | {:error, Changeset}
+  | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>Gets the active history for the given reservation and deactivates it.</p>
+  </section>
+</div>
+<div class="detail" id="delete_reservation/1">
+    <div class="detail-header">
+    <a href="#delete_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete_reservation(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Deletes a Reservation.</p>
+<h2 id="delete_reservation/1-examples" class="section-heading">
+  <a href="#delete_reservation/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">delete_reservation</span><span class="p" data-group-id="7099439119-1">(</span><span class="n">reservation</span><span class="p" data-group-id="7099439119-1">)</span><span class="w">
+</span><span class="p" data-group-id="7099439119-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7099439119-3">%</span><span class="nc" data-group-id="7099439119-3">Reservation</span><span class="p" data-group-id="7099439119-3">{</span><span class="p" data-group-id="7099439119-3">}</span><span class="p" data-group-id="7099439119-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_reservation</span><span class="p" data-group-id="7099439119-4">(</span><span class="n">reservation</span><span class="p" data-group-id="7099439119-4">)</span><span class="w">
+</span><span class="p" data-group-id="7099439119-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7099439119-6">%</span><span class="nc" data-group-id="7099439119-6">Ecto.Changeset</span><span class="p" data-group-id="7099439119-6">{</span><span class="p" data-group-id="7099439119-6">}</span><span class="p" data-group-id="7099439119-5">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="delete_reservation_status_history/1">
+    <div class="detail-header">
+    <a href="#delete_reservation_status_history/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">delete_reservation_status_history(reservation_status_history)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-280" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Deletes a ReservationStatusHistory.</p>
+<h2 id="delete_reservation_status_history/1-examples" class="section-heading">
+  <a href="#delete_reservation_status_history/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">delete_reservation_status_history</span><span class="p" data-group-id="2071814608-1">(</span><span class="n">reservation_status_history</span><span class="p" data-group-id="2071814608-1">)</span><span class="w">
+</span><span class="p" data-group-id="2071814608-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2071814608-3">%</span><span class="nc" data-group-id="2071814608-3">ReservationStatusHistory</span><span class="p" data-group-id="2071814608-3">{</span><span class="p" data-group-id="2071814608-3">}</span><span class="p" data-group-id="2071814608-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_reservation_status_history</span><span class="p" data-group-id="2071814608-4">(</span><span class="n">reservation_status_history</span><span class="p" data-group-id="2071814608-4">)</span><span class="w">
+</span><span class="p" data-group-id="2071814608-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2071814608-6">%</span><span class="nc" data-group-id="2071814608-6">Ecto.Changeset</span><span class="p" data-group-id="2071814608-6">{</span><span class="p" data-group-id="2071814608-6">}</span><span class="p" data-group-id="2071814608-5">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_active_reservation_history/1">
+    <div class="detail-header">
+    <a href="#get_active_reservation_history/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_active_reservation_history(reservation_id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>get_active_reservation_history(Integer) ::
+  Parkapp.Reservations.ReservationStatusHistory | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Retrieves from the database the active history for the given reservation</p>
+  </section>
+</div>
+<div class="detail" id="get_current_reservation/1">
+    <div class="detail-header">
+    <a href="#get_current_reservation/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_current_reservation(device_id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-312" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>get_current_reservation(Integer) :: Parkapp.Reservations.Reservation | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Retrives the current reservation for the given device.
+  It makes sure the status history is correct and ignores the closed reservations</p>
+  </section>
+</div>
+<div class="detail" id="get_reservation!/1">
+    <div class="detail-header">
+    <a href="#get_reservation!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_reservation!(id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Gets a single reservation.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.10/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Reservation does not exist.</p>
+<h2 id="get_reservation!/1-examples" class="section-heading">
+  <a href="#get_reservation!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation!</span><span class="p" data-group-id="7945244394-1">(</span><span class="mi">123</span><span class="p" data-group-id="7945244394-1">)</span><span class="w">
+</span><span class="p" data-group-id="7945244394-2">%</span><span class="nc" data-group-id="7945244394-2">Reservation</span><span class="p" data-group-id="7945244394-2">{</span><span class="p" data-group-id="7945244394-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation!</span><span class="p" data-group-id="7945244394-3">(</span><span class="mi">456</span><span class="p" data-group-id="7945244394-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_reservation_status!/1">
+    <div class="detail-header">
+    <a href="#get_reservation_status!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_reservation_status!(id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-69" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Gets a single reservation_status.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.10/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Reservation status does not exist.</p>
+<h2 id="get_reservation_status!/1-examples" class="section-heading">
+  <a href="#get_reservation_status!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_status!</span><span class="p" data-group-id="6557535987-1">(</span><span class="mi">123</span><span class="p" data-group-id="6557535987-1">)</span><span class="w">
+</span><span class="p" data-group-id="6557535987-2">%</span><span class="nc" data-group-id="6557535987-2">ReservationStatus</span><span class="p" data-group-id="6557535987-2">{</span><span class="p" data-group-id="6557535987-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_status!</span><span class="p" data-group-id="6557535987-3">(</span><span class="mi">456</span><span class="p" data-group-id="6557535987-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_reservation_status_history!/1">
+    <div class="detail-header">
+    <a href="#get_reservation_status_history!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_reservation_status_history!(id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-214" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Gets a single reservation_status_history.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.10/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Reservation status history does not exist.</p>
+<h2 id="get_reservation_status_history!/1-examples" class="section-heading">
+  <a href="#get_reservation_status_history!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_status_history!</span><span class="p" data-group-id="7731581907-1">(</span><span class="mi">123</span><span class="p" data-group-id="7731581907-1">)</span><span class="w">
+</span><span class="p" data-group-id="7731581907-2">%</span><span class="nc" data-group-id="7731581907-2">ReservationStatusHistory</span><span class="p" data-group-id="7731581907-2">{</span><span class="p" data-group-id="7731581907-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_status_history!</span><span class="p" data-group-id="7731581907-3">(</span><span class="mi">456</span><span class="p" data-group-id="7731581907-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="get_reservation_type!/1">
+    <div class="detail-header">
+    <a href="#get_reservation_type!/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">get_reservation_type!(id)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Gets a single reservation_type.</p>
+<p>Raises <a href="https://hexdocs.pm/ecto/2.2.10/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Reservation type does not exist.</p>
+<h2 id="get_reservation_type!/1-examples" class="section-heading">
+  <a href="#get_reservation_type!/1-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_type!</span><span class="p" data-group-id="9084440504-1">(</span><span class="mi">123</span><span class="p" data-group-id="9084440504-1">)</span><span class="w">
+</span><span class="p" data-group-id="9084440504-2">%</span><span class="nc" data-group-id="9084440504-2">ReservationType</span><span class="p" data-group-id="9084440504-2">{</span><span class="p" data-group-id="9084440504-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_reservation_type!</span><span class="p" data-group-id="9084440504-3">(</span><span class="mi">456</span><span class="p" data-group-id="9084440504-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="list_reservation_status/0">
+    <div class="detail-header">
+    <a href="#list_reservation_status/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_reservation_status()</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-51" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns the list of reservation_status.</p>
+<h2 id="list_reservation_status/0-examples" class="section-heading">
+  <a href="#list_reservation_status/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_reservation_status</span><span class="p" data-group-id="8055091253-1">(</span><span class="p" data-group-id="8055091253-1">)</span><span class="w">
+</span><span class="p" data-group-id="8055091253-2">[</span><span class="p" data-group-id="8055091253-3">%</span><span class="nc" data-group-id="8055091253-3">ReservationStatus</span><span class="p" data-group-id="8055091253-3">{</span><span class="p" data-group-id="8055091253-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="8055091253-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="list_reservation_types/0">
+    <div class="detail-header">
+    <a href="#list_reservation_types/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_reservation_types()</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-20" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns the list of reservation_types.</p>
+<h2 id="list_reservation_types/0-examples" class="section-heading">
+  <a href="#list_reservation_types/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_reservation_types</span><span class="p" data-group-id="0700607627-1">(</span><span class="p" data-group-id="0700607627-1">)</span><span class="w">
+</span><span class="p" data-group-id="0700607627-2">[</span><span class="p" data-group-id="0700607627-3">%</span><span class="nc" data-group-id="0700607627-3">ReservationType</span><span class="p" data-group-id="0700607627-3">{</span><span class="p" data-group-id="0700607627-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="0700607627-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="list_reservations/0">
+    <div class="detail-header">
+    <a href="#list_reservations/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_reservations()</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns the list of reservations.</p>
+<h2 id="list_reservations/0-examples" class="section-heading">
+  <a href="#list_reservations/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_reservations</span><span class="p" data-group-id="3524056123-1">(</span><span class="p" data-group-id="3524056123-1">)</span><span class="w">
+</span><span class="p" data-group-id="3524056123-2">[</span><span class="p" data-group-id="3524056123-3">%</span><span class="nc" data-group-id="3524056123-3">Reservation</span><span class="p" data-group-id="3524056123-3">{</span><span class="p" data-group-id="3524056123-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="3524056123-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="list_revervation_status_history/0">
+    <div class="detail-header">
+    <a href="#list_revervation_status_history/0" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">list_revervation_status_history()</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Returns the list of revervation_status_history.</p>
+<h2 id="list_revervation_status_history/0-examples" class="section-heading">
+  <a href="#list_revervation_status_history/0-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">list_revervation_status_history</span><span class="p" data-group-id="7385165361-1">(</span><span class="p" data-group-id="7385165361-1">)</span><span class="w">
+</span><span class="p" data-group-id="7385165361-2">[</span><span class="p" data-group-id="7385165361-3">%</span><span class="nc" data-group-id="7385165361-3">ReservationStatusHistory</span><span class="p" data-group-id="7385165361-3">{</span><span class="p" data-group-id="7385165361-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="7385165361-2">]</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="move_to_closed_state/1">
+    <div class="detail-header">
+    <a href="#move_to_closed_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">move_to_closed_state(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-451" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>move_to_closed_state(Parkapp.Reservations.Reservation) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Updates the reservation to the closed state.
+  Creates the sixth and final entry in the status history. Deactivates the previous one.</p>
+  </section>
+</div>
+<div class="detail" id="move_to_external_payment_state/1">
+    <div class="detail-header">
+    <a href="#move_to_external_payment_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">move_to_external_payment_state(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-427" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>move_to_external_payment_state(Parkapp.Reservations.Reservation) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Updates the reservation to the external payment state.
+  Creates the forth entry in the status history. Deactivates the previous one.</p>
+  </section>
+</div>
+<div class="detail" id="move_to_in_park_state/1">
+    <div class="detail-header">
+    <a href="#move_to_in_park_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">move_to_in_park_state(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-382" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>move_to_in_park_state(Parkapp.Reservations.Reservation) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Updates the reservation to the in park state.
+  Creates the second entry in the status history. Deactivates the previous one.</p>
+  </section>
+</div>
+<div class="detail" id="move_to_payment1_state/3">
+    <div class="detail-header">
+    <a href="#move_to_payment1_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">move_to_payment1_state(reservation, context_token, amount)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-394" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>move_to_payment1_state(Parkapp.Reservations.Reservation, String, String) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Updates the reservation to the payment1 state. Sets the context_token and amount.
+  Creates the third entry in the status history. Deactivates the previous one.</p>
+  </section>
+</div>
+<div class="detail" id="move_to_payment2_state/1">
+    <div class="detail-header">
+    <a href="#move_to_payment2_state/1" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">move_to_payment2_state(reservation)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-439" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+        
+      <div class="specs">
+          <pre>move_to_payment2_state(Parkapp.Reservations.Reservation) ::
+  {:ok, Parkapp.Reservations.Reservation} | {:error, Changeset} | nil</pre>
+      </div>
+  </div>
+  <section class="docstring">
+<p>  Updates the reservation to the payment2 state.
+  Creates the fifth entry in the status history. Deactivates the previous one.</p>
+  </section>
+</div>
+<div class="detail" id="update_reservation/2">
+    <div class="detail-header">
+    <a href="#update_reservation/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_reservation(reservation, attrs)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Updates a reservation.</p>
+<h2 id="update_reservation/2-examples" class="section-heading">
+  <a href="#update_reservation/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation</span><span class="p" data-group-id="2706153228-1">(</span><span class="n">reservation</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2706153228-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="2706153228-2">}</span><span class="p" data-group-id="2706153228-1">)</span><span class="w">
+</span><span class="p" data-group-id="2706153228-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2706153228-4">%</span><span class="nc" data-group-id="2706153228-4">Reservation</span><span class="p" data-group-id="2706153228-4">{</span><span class="p" data-group-id="2706153228-4">}</span><span class="p" data-group-id="2706153228-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation</span><span class="p" data-group-id="2706153228-5">(</span><span class="n">reservation</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2706153228-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2706153228-6">}</span><span class="p" data-group-id="2706153228-5">)</span><span class="w">
+</span><span class="p" data-group-id="2706153228-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2706153228-8">%</span><span class="nc" data-group-id="2706153228-8">Ecto.Changeset</span><span class="p" data-group-id="2706153228-8">{</span><span class="p" data-group-id="2706153228-8">}</span><span class="p" data-group-id="2706153228-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="update_reservation_after_payment/2">
+    <div class="detail-header">
+    <a href="#update_reservation_after_payment/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_reservation_after_payment(reservation, attrs)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Updates a reservation using the payment changeset.</p>
+<h2 id="update_reservation_after_payment/2-examples" class="section-heading">
+  <a href="#update_reservation_after_payment/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation</span><span class="p" data-group-id="0323041067-1">(</span><span class="n">reservation</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0323041067-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="0323041067-2">}</span><span class="p" data-group-id="0323041067-1">)</span><span class="w">
+</span><span class="p" data-group-id="0323041067-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0323041067-4">%</span><span class="nc" data-group-id="0323041067-4">Reservation</span><span class="p" data-group-id="0323041067-4">{</span><span class="p" data-group-id="0323041067-4">}</span><span class="p" data-group-id="0323041067-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation</span><span class="p" data-group-id="0323041067-5">(</span><span class="n">reservation</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0323041067-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="0323041067-6">}</span><span class="p" data-group-id="0323041067-5">)</span><span class="w">
+</span><span class="p" data-group-id="0323041067-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0323041067-8">%</span><span class="nc" data-group-id="0323041067-8">Ecto.Changeset</span><span class="p" data-group-id="0323041067-8">{</span><span class="p" data-group-id="0323041067-8">}</span><span class="p" data-group-id="0323041067-7">}</span></code></pre>
+  </section>
+</div>
+<div class="detail" id="update_reservation_status_history/2">
+    <div class="detail-header">
+    <a href="#update_reservation_status_history/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <span class="signature">update_reservation_status_history(reservation_status_history, attrs)</span>
+      <a href="https://bitbucket.org/bitmakersoftware/parkapp_server/src/develop/src/master/lib/parkapp/reservations/reservations_context.ex#cl-259" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+          </div>
+  <section class="docstring">
+<p>Updates a reservation_status_history.</p>
+<h2 id="update_reservation_status_history/2-examples" class="section-heading">
+  <a href="#update_reservation_status_history/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="nohighlight makeup elixir"><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation_status_history</span><span class="p" data-group-id="0165136837-1">(</span><span class="n">reservation_status_history</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0165136837-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="0165136837-2">}</span><span class="p" data-group-id="0165136837-1">)</span><span class="w">
+</span><span class="p" data-group-id="0165136837-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0165136837-4">%</span><span class="nc" data-group-id="0165136837-4">ReservationStatusHistory</span><span class="p" data-group-id="0165136837-4">{</span><span class="p" data-group-id="0165136837-4">}</span><span class="p" data-group-id="0165136837-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_reservation_status_history</span><span class="p" data-group-id="0165136837-5">(</span><span class="n">reservation_status_history</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0165136837-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="0165136837-6">}</span><span class="p" data-group-id="0165136837-5">)</span><span class="w">
+</span><span class="p" data-group-id="0165136837-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0165136837-8">%</span><span class="nc" data-group-id="0165136837-8">Ecto.Changeset</span><span class="p" data-group-id="0165136837-8">{</span><span class="p" data-group-id="0165136837-8">}</span><span class="p" data-group-id="0165136837-7">}</span></code></pre>
+  </section>
+</div>
+        </section>
+
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.19.1),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-a0c90688fa.js"></script>
+  
+  </body>
+</html>
+

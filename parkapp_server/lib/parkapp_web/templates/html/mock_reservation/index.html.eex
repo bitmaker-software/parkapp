@@ -1,0 +1,55 @@
+<h2>Listing Reservations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>Barcode</th>
+      <th>Locator</th>
+      <th>Status</th>
+      <th>Type</th>
+      <th>Cancelled</th>
+      <th>Cancelled at</th>
+      <th>Reservation start time</th>
+      <th>Parking start time</th>
+      <th>Payment1 time</th>
+      <th>Parking payment time</th>
+      <th>Context token</th>
+      <th>Amount</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for reservation <- @reservations do %>
+      <tr>
+        <td><%= reservation.device_id %></td>
+        <td><%= reservation.barcode %></td>
+        <td><%= reservation.locator %></td>
+        <td><%= reservation.reservation_status_id %></td>
+        <td><%= reservation.reservation_type_id %></td>
+        <td><%= reservation.cancelled %></td>
+        <td><%= reservation.cancelled_at %></td>
+        <td><%= reservation.reservation_start_time %></td>
+        <td><%= reservation.parking_start_time %></td>
+        <td><%= reservation.payment1_time %></td>
+        <td><%= reservation.parking_payment_time %></td>
+        <td><%= reservation.context_token %></td>
+        <td><%= reservation.amount %></td>
+        <td class="text-right">
+          <span><%= link "Show", to: mock_reservation_path(@conn, :show, reservation), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Edit", to: mock_reservation_path(@conn, :edit, reservation), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Edit Amount", to: mock_reservation_path(@conn, :edit_amount, reservation), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Edit Cancel", to: mock_reservation_path(@conn, :edit_cancel, reservation), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "To Open", to: mock_reservation_path(@conn, :move_to_open, reservation), method: :put, class: "btn btn-default btn-xs" %></span>
+          <span><%= link "To Inpark", to: mock_reservation_path(@conn, :move_to_inpark, reservation), method: :put, class: "btn btn-default btn-xs" %></span>
+          <span><%= link "To External Payment", to: mock_reservation_path(@conn, :move_to_external_payment, reservation), method: :put, class: "btn btn-default btn-xs" %></span>
+          <span><%= link "To Payment2", to: mock_reservation_path(@conn, :move_to_payment2, reservation), method: :put, class: "btn btn-default btn-xs" %></span>
+          <span><%= link "To Close", to: mock_reservation_path(@conn, :move_to_closed, reservation), method: :put, class: "btn btn-default btn-xs" %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Reservation", to: mock_reservation_path(@conn, :new) %></span>
+<span><%= link "Clear Reservations", to: mock_reservation_path(@conn, :clear_all_reservations), method: :delete, data: [confirm: "Are you sure?"] %></span>

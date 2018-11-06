@@ -1,0 +1,5 @@
+<h2>New Device</h2>
+
+<%= render "form.html", Map.put(assigns, :action, device_path(@conn, :create)) %>
+
+<span><%= link "Back", to: device_path(@conn, :index) %></span>

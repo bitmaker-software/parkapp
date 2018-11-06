@@ -1,0 +1,71 @@
+pipeline {
+  agent {
+    dockerfile {
+      filename 'docker/build/Dockerfile'
+      args '-u root -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/bin/docker'
+    }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        echo 'Building parkapp_server'
+        sh '''mix local.hex --force
+        mix hex.info
+        mix deps.clean --all
+        mix local.rebar --force
+        mix deps.get
+        mix compile
+        cd assets
+        npm install
+        npm run deploy
+        '''
+      }
+    }
+    stage('Create release') {
+      steps {
+        echo 'Creating release'
+        sh '''mix deps.compile
+        MIX_ENV=prod mix phx.digest
+        MIX_ENV=prod mix release'''
+      }
+    }
+    stage('Deploy to staging') {
+      steps {
+      timeout(time: 10, unit: 'MINUTES') {
+          input message: 'Deploy to AWS?', ok: 'Fire away!'
+          echo 'Deploying to aws'
+          script {
+            BUILD_VERSION = readFile('VERSION').trim()
+          }
+          sh "docker build --build-arg VERSION=$BUILD_VERSION -t parkapp-repo -f docker/prod/Dockerfile ."
+          sh "docker tag parkapp-repo:latest 717338238220.dkr.ecr.eu-central-1.amazonaws.com/parkapp-repo:latest"
+          sh "docker tag parkapp-repo:latest 717338238220.dkr.ecr.eu-central-1.amazonaws.com/parkapp-repo:$BUILD_VERSION"
+
+          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-parkapp-server', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+            writeFile file: '~/.aws/config', text: '''[default]
+            aws_access_key_id=$AWS_ACCESS_KEY_ID
+            aws_secret_access_key=$AWS_SECRET_ACCESS_KEY
+            region=eu-central-1
+            output=json'''
+            sh 'eval $(aws ecr get-login --no-include-email --region eu-central-1)'
+            sh "docker push 717338238220.dkr.ecr.eu-central-1.amazonaws.com/parkapp-repo:latest"
+            sh "docker push 717338238220.dkr.ecr.eu-central-1.amazonaws.com/parkapp-repo:$BUILD_VERSION"
+
+            sh 'aws ecs --region="eu-central-1" --cluster="arn:aws:ecs:eu-central-1:717338238220:cluster/parkapp-dev" --service="arn:aws:ecs:eu-central-1:717338238220:service/parkapp-service" --task-definition="arn:aws:ecs:eu-central-1:717338238220:task-definition/parkapp-server-dev-task" --desired-count=0 update-service'
+            sh 'aws ecs --region="eu-central-1" wait services-stable --cluster="arn:aws:ecs:eu-central-1:717338238220:cluster/parkapp-dev" --services="arn:aws:ecs:eu-central-1:717338238220:service/parkapp-service"'
+            sh 'aws ecs --region="eu-central-1" --cluster="arn:aws:ecs:eu-central-1:717338238220:cluster/parkapp-dev" --service="arn:aws:ecs:eu-central-1:717338238220:service/parkapp-service" --task-definition="arn:aws:ecs:eu-central-1:717338238220:task-definition/parkapp-server-dev-task" --desired-count=1 update-service'
+            sh 'aws ecs --region="eu-central-1" wait services-stable --cluster="arn:aws:ecs:eu-central-1:717338238220:cluster/parkapp-dev" --services="arn:aws:ecs:eu-central-1:717338238220:service/parkapp-service"'
+          }
+
+          sh 'docker images -a | grep "parkapp-repo" | xargs docker rmi --force || true'
+          }
+      }
+    }
+  }
+  post {
+    always {
+      sh "chmod -R 777 ."
+      cleanWs()
+    }
+  }
+}

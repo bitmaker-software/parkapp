@@ -1,0 +1,686 @@
+{
+  "account":
+  {
+    "en": "Account",
+    "pt": "Conta"
+  },
+  "home":
+  {
+    "en": "Home",
+    "pt": "Ecrã Principal"
+  },
+  "code":
+  {
+    "en": "Get Code",
+    "pt": "Obter Código"
+  },
+  "trips":
+  {
+    "en": "Your Trips",
+    "pt": "Viagens"
+  },
+  "payment":
+  {
+    "en": "Payment",
+    "pt": "Pagamento"
+  },
+  "subscriptions":
+  {
+    "en": "Subscriptions",
+    "pt": "Subscrições"
+  },
+  "account_action":
+  {
+    "en": "Edit account",
+    "pt": "Editar conta"
+  },
+  "select_park":
+  {
+    "en": "Select Park",
+    "pt": "Selecionar Parque"
+  },
+  "enter_park":
+  {
+    "en": "Enter Park",
+    "pt": "Entrar no Parque"
+  },
+  "exit_park":
+  {
+    "en": "Exit Park",
+    "pt": "Sair do Parque"
+  },
+  "your_park_code":
+  {
+    "en": "Your Park Code",
+    "pt": "O seu Código do Parque"
+  },
+  "thank_you":
+  {
+    "en": "Thank you for using Park App!\n\nDrive safe!",
+    "pt": "Obrigado por usar a Aplicação Park!\n\nConduza com cuidado!"
+  },
+  "near_park":
+  {
+    "en": "We noticed you’re close to Parque Trindade!",
+    "pt": "Reparamos que está perto do Parque Trindade!"
+  },
+  "directions_button":
+  {
+    "en": "Get code to open gate",
+    "pt": "Obter o código para entrar no parque"
+  },
+  "find_entrance":
+  {
+    "en": "Can't find entrance?",
+    "pt": "Não encontra a entrada?"
+  },
+  "get_directions":
+  {
+    "en": "Click here to get directions",
+    "pt": "Clique aqui para obter direções"
+  },
+  "processing_payment":
+  {
+    "en": "Processing payment...",
+    "pt": "A processar pagamento..."
+  },
+  "minutes_to_exit":
+  {
+    "en": "You will have 10 minutes to exit the park",
+    "pt": "Terá 10 minutos para sair do parque"
+  },
+  "will_be_charged":
+  {
+    "en": "You will be charged for the total holding period",
+    "pt": "Será cobrado pelo total do período de reserva"
+  },
+  "subscription_being_renewed":
+  {
+    "en": "Your monthly subscription is being renewed",
+    "pt": "A sua subscrição mensal está a ser renovada"
+  },
+  "monthly_subscription":
+  {
+    "en": "Monthly Regular Subscription",
+    "pt": "Subscrição Mensal Regular"
+  },
+  "booking_details":
+  {
+    "en": "Booking details",
+    "pt": "Detalhes da reserva"
+  },
+  "cancel_booking":
+  {
+    "en": "Cancel booking",
+    "pt": "Cancelar reserva"
+  },
+  "cancel_are_you_sure":
+  {
+    "en": "Are you sure you want to cancel your booking?",
+    "pt": "De certeza que quer cancelar a sua reserva?"
+  },
+  "cancel_go_back":
+  {
+    "en": "Go back",
+    "pt": "Voltar"
+  },
+  "cancel_want":
+  {
+    "en": "I want to cancel",
+    "pt": "Quero cancelar"
+  },
+  "booking_ending":
+  {
+    "en": "You are about to lose your spot at ",
+    "pt": "Está prestes a perder o seu lugar no "
+  },
+  "continue":
+  {
+    "en": "Continue",
+    "pt": "Continuar"
+  },
+  "warning_unable_book":
+  {
+    "en": " If you don’t show up you won’t be able to book a spot for one month.",
+    "pt": "Se não aparecer não poderá efetuar uma reserva durante um mês."
+  },
+  "cancel_unable_book":
+  {
+    "en": "Because you cancelled your booking you won’t be able to book a spot for the next month.",
+    "pt": "Porque cancelou a sua reserva, não poderá efetuar uma reserva durante o próximo mês."
+  },
+  "booking_expiry_time":
+  {
+    "en": "Expiry time",
+    "pt": "Tempo de expiração"
+  },
+  "booking_canceled":
+  {
+    "en": "Your booking has been cancelled.",
+    "pt": "A sua reserva foi cancelada."
+  },
+  "get_directions_park":
+  {
+    "en": "Get directions to the park",
+    "pt": "Obter direções para o parque"
+  },
+  "go_garage_list":
+  {
+    "en": "Go back to the Parking Garage List",
+    "pt": "Voltar a Lista dos Parques de Estacionamento"
+  },
+  "create_account":
+  {
+    "en": "Create Account",
+    "pt": "Criar Conta"
+  },
+  "account_name":
+  {
+    "en": "Name",
+    "pt": "Nome"
+  },
+  "error_account_name":
+  {
+    "en": "Name is required.",
+    "pt": "Nome é obrigatório."
+  },
+  "error_valid_account_name":
+  {
+    "en": "Please enter only alphabetical characters.",
+    "pt": "Por favor introduza apenas caracteres alfabéticos."
+  },
+  "account_name_placeholder":
+  {
+    "en": "Please insert your first and last name",
+    "pt": "Por favor introduza o seu primeiro e último nome"
+  },
+  "account_email":
+  {
+    "en": "Email",
+    "pt": "Email"
+  },
+  "error_account_email":
+  {
+    "en": "Email is required.",
+    "pt": "Email é obrigatório."
+  },
+  "error_valid_account_email":
+  {
+    "en": "Please enter a valid email address.",
+    "pt": "Por favor introduza um endereço de email válido."
+  },
+  "account_email_placeholder":
+  {
+    "en": "Please insert your email address",
+    "pt": "Por favor introduza o seu endereço de email"
+  },
+  "account_password":
+  {
+    "en": "Password",
+    "pt": "Senha de Acesso"
+  },
+  "error_account_password":
+  {
+    "en": "Password is required.",
+    "pt": "Senha é obrigatória."
+  },
+  "error_valid_account_password":
+  {
+    "en": "Password must be at least 6 characters.",
+    "pt": "Senha deve ter pelo menos 6 caracteres."
+  },
+  "account_password_placeholder":
+  {
+    "en": "Please insert your password",
+    "pt": "Por favor introduza a sua senha de acesso"
+  },
+  "terms_conditions":
+  {
+    "en": "I agree with terms and conditions",
+    "pt": "Concordo com os termos e condições"
+  },
+  "already_have_account":
+  {
+    "en": "Already have an account?",
+    "pt": "Já possui uma conta?"
+  },
+  "click_login":
+  {
+    "en": "Click here to login!",
+    "pt": "Clique aqui para fazer login!"
+  },
+  "login":
+  {
+    "en": "Login",
+    "pt": "Login"
+  },
+  "remember":
+  {
+    "en": "Remember me",
+    "pt": "Lembrar-me"
+  },
+  "forgot_password":
+  {
+    "en": "Forgot password",
+    "pt": "Esqueci-me da senha"
+  },
+  "dont_have_account":
+  {
+    "en": "Don't have an account yet?",
+    "pt": "Ainda não tem conta?"
+  },
+  "click_create":
+  {
+    "en": "Click here to create one!",
+    "pt": "Clique aqui para criar uma!"
+  },
+  "accept_terms_conditions":
+  {
+    "en": "Please accept our terms and conditions.",
+    "pt": "Por favor aceite os nossos termos e condições."
+  },
+  "scan_enter":
+  {
+    "en": "Scan at gate to enter the park",
+    "pt": "Digitalize no portão para entrar no parque"
+  },
+  "scan_exit":
+  {
+    "en": "Scan at gate to exit the park",
+    "pt": "Digitalize no portão para sair do parque"
+  },
+  "edit_account":
+  {
+    "en": "Edit Account",
+    "pt": "Editar Conta"
+  },
+  "change_photo":
+  {
+    "en": "Change profile photo",
+    "pt": "Mudar foto de perfil"
+  },
+  "delete_account":
+  {
+    "en": "Delete Account",
+    "pt": "Apagar Conta"
+  },
+  "save_account":
+  {
+    "en": "Save Changes",
+    "pt": "Guardar Alterações"
+  },
+  "subscription_valid":
+  {
+    "en": "Your subscription is now valid until ",
+    "pt": "A sua subscrição é agora válida até "
+  },
+  "back_to_subscriptions":
+  {
+    "en": "Go back to your Subscriptions list",
+    "pt": "Voltar para a lista das Subscrições"
+  },
+  "subscription_cancelled":
+  {
+    "en": "Your subscription has been cancelled.",
+    "pt": "A sua subscrição foi cancelada."
+  },
+  "past_trips":
+  {
+    "en": "Past",
+    "pt": "Realizadas"
+  },
+  "upcoming_trips":
+  {
+    "en": "Upcoming",
+    "pt": "Próximas"
+  },
+  "trip_details":
+  {
+    "en": "Trip Details",
+    "pt": "Detalhes da Viagem"
+  },
+  "get_receipt":
+  {
+    "en": "Get receipt",
+    "pt": "Obter recibo"
+  },
+  "add_payment":
+  {
+    "en": "Add Payment Method",
+    "pt": "Adicionar Método de Pagamento"
+  },
+  "add_card":
+  {
+    "en": "Add Card",
+    "pt": "Adicionar Cartão"
+  },
+  "card_number":
+  {
+    "en": "Card Number",
+    "pt": "Número do Cartão"
+  },
+  "error_card_number":
+  {
+    "en": "Card Number is required.",
+    "pt": "Número do Cartão é obrigatório."
+  },
+  "error_valid_card_number":
+  {
+    "en": "Please enter a valid Card Number.",
+    "pt": "Por favor introduza um Número de Cartão válido."
+  },
+  "expiry_date":
+  {
+    "en": "Expiry date",
+    "pt": "Data de expiração"
+  },
+  "error_expiry_date":
+  {
+    "en": "Expiry date is required.",
+    "pt": "Data de expiração é obrigatória."
+  },
+  "error_valid_expiry_date":
+  {
+    "en": "Expiry date is invalid (MM/YYYY).",
+    "pt": "Data de expiração é inválida (M/AAAA)."
+  },
+  "expiry_date_placeholder":
+  {
+    "en": "MM/YYYY",
+    "pt": "MM/AAAA"
+  },
+  "security_code":
+  {
+    "en": "Security Code",
+    "pt": "Código de Segurança"
+  },
+  "error_valid_security_code":
+  {
+    "en": "Security Code must be three numeric digits.",
+    "pt": "Código de Segurança deve ser três digitos numéricos."
+  },
+  "error_security_code":
+  {
+    "en": "Security Code is required.",
+    "pt": "Código de Segurança é obrigatório."
+  },
+  "country":
+  {
+    "en": "Country",
+    "pt": "País"
+  },
+  "error_valid_country":
+  {
+    "en": "Country is alphabetical characters only.",
+    "pt": "Por favor introduza apenas caracteres alfabéticos."
+  },
+  "error_country":
+  {
+    "en": "Country is required.",
+    "pt": "País é obrigatório."
+  },
+  "save_card":
+  {
+    "en": "Save",
+    "pt": "Guardar"
+  },
+  "create_account_now":
+  {
+    "en": "Create an account now",
+    "pt": "Criar uma conta agora"
+  },
+  "account_info_card":
+  {
+    "en": "If you create an account we will automatically charge you and you can exit the park instantly.",
+    "pt": "Se criar uma conta, nós iremos cobrá-lo automaticamente e poderá sair do parque instantaneamente."
+  },
+  "default_card": {
+    "en": "Save as default payment method",
+    "pt": "Guardar como método de pagamento predefinido"
+  },
+  "delete_card":
+  {
+    "en": "Delete Payment Method",
+    "pt": "Apagar Método de Pagamento"
+  },
+  "subscription_details":
+  {
+    "en": "Subscription details",
+    "pt": "Detalhes da Subscrição"
+  },
+  "renew_subscription":
+  {
+    "en": "Renew subscription",
+    "pt": "Renovar subscrição"
+  },
+  "cancel_subscription":
+  {
+    "en": "Cancel subscription",
+    "pt": "Cancelar subscrição"
+  },
+  "owner":
+  {
+    "en": "OWNER",
+    "pt": "PROPRIETÁRIO"
+  },
+  "subscription":
+  {
+    "en": "SUSCRIPTION",
+    "pt": "SUBSCRIÇÃO"
+  },
+  "vehicle_details":
+  {
+    "en": "VEHICLE DETAILS",
+    "pt": "DETALHES DO VEÍCULO"
+  },
+  "subscription_name":
+  {
+    "en": "Name",
+    "pt": "Nome"
+  },
+  "subscription_email":
+  {
+    "en": "Email",
+    "pt": "Email"
+  },
+  "subscription_park":
+  {
+    "en": "Park",
+    "pt": "Parque"
+  },
+  "subscription_start":
+  {
+    "en": "Start Date",
+    "pt": "Data de Início"
+  },
+  "subscription_end":
+  {
+    "en": "End Date",
+    "pt": "Data de Fim"
+  },
+  "subscription_model":
+  {
+    "en": "Model",
+    "pt": "Modelo"
+  },
+  "subscription_value":
+  {
+    "en": "Value",
+    "pt": "Valor"
+  },
+  "subscription_vehicle_brand":
+  {
+    "en": "Vehicle brand and model",
+    "pt": "Marca e modelo do veículo"
+  },
+  "subscription_license_plate":
+  {
+    "en": "License plate",
+    "pt": "Matrícula"
+  },
+  "renew_expiry_date":
+  {
+    "en": "Expiry date",
+    "pt": "Data Limite"
+  },
+  "renew_last_payment":
+  {
+    "en": "Last payment",
+    "pt": "Último pagamento"
+  },
+  "renew_select_payment":
+  {
+    "en": "SELECT PAYMENT METHOD",
+    "pt": "SELECIONE O MÉTODO DE PAGAMENTO"
+  },
+  "feedback":
+  {
+    "en": "Please give us feedback on how to improve",
+    "pt": "Por favor dê-nos sugestões em como melhorar"
+  },
+  "available_spaces":
+  {
+    "en": "Available spaces",
+    "pt": "Espaços disponíveis"
+  },
+  "map_view":
+  {
+    "en": "Map view",
+    "pt": "Vista mapa"
+  },
+  "park_details":
+  {
+    "en": "Park details",
+    "pt": "Detalhes do parque"
+  },
+  "book_spot":
+  {
+    "en": "Book your spot",
+    "pt": "Reserva um lugar"
+  },
+  "get_directions_details":
+  {
+    "en": "Get directions",
+    "pt": "Obter direções"
+  },
+  "features":
+  {
+    "en": "Features",
+    "pt": "Características"
+  },
+  "temporary_home":
+  {
+    "en": "This is a first test to prove concept so we are only providing Parque Trindade as an option.",
+    "pt": "Este é um primeiro teste para provar o conceito, por isso apenas apenas disponibilizamos o Parque Trindade como opção."
+  },
+  "steps":
+  {
+    "en": "Steps",
+    "pt": "Passos"
+  },
+  "permission_denied":
+  {
+    "en": "Permission denied.",
+    "pt": "Permissão rejeitada."
+  },
+  "permission_denied_never":
+  {
+    "en": "Permission denied - please enable permission to access localization from the app settings.",
+    "pt": "Permissão rejeitada - por favor ative a permissão para aceder à localização a partir das definições da aplicação."
+  },
+  "close":
+  {
+    "en": "Close",
+    "pt": "Fechar"
+  },
+  "map_view_title":
+  {
+    "en": "Map View",
+    "pt": "Vista Mapa"
+  },
+  "start_navigation":
+  {
+    "en": "Start Navigation",
+    "pt": "Começar Navegação"
+  },
+  "your_location":
+  {
+    "en": "Your location",
+    "pt": "Localização atual"
+  },
+  "arrive_at":
+  {
+    "en": "Arrive at",
+    "pt": "Chegada ao"
+  },
+  "route_to":
+  {
+    "en": "Route to",
+    "pt": "Percurso para"
+  },
+  "image_error":
+  {
+    "en": "Could not load the image",
+    "pt": "Não foi possível carregar a imagem"
+  },
+  "loading_error":
+  {
+    "en": "An error has occurred! Please try again later.",
+    "pt": "Ocorreu um erro! Por favor tente novamente mais tarde."
+  },
+  "try_again":
+  {
+    "en": "Try again",
+    "pt": "Tentar novamente"
+  },
+  "pay_leave":
+  {
+    "en": "Pay & Leave",
+    "pt": "Pagar & Sair"
+  },
+  "started_at":
+  {
+    "en": "Started at",
+    "pt": "Começou às"
+  },
+  "waiting_enter":
+  {
+    "en": "Waiting for you to enter the park...",
+    "pt": "À espera que entre no parque..."
+  },
+  "minutes_to_enter":
+  {
+    "en": "You have 10 minutes to enter the park",
+    "pt": "Tem 10 minutos para entrar no parque"
+  },
+  "confirm_payment":
+  {
+    "en": "Confirm payment",
+    "pt": "Confirmar pagamento"
+  },
+  "cancel_payment":
+  {
+    "en": "Cancel payment",
+    "pt": "Cancelar pagamento"
+  },
+  "phone_number":
+  {
+    "en": "Phone Number",
+    "pt": "Número de Telefone"
+  },
+  "error_phone_number":
+  {
+    "en": "Phone Number is required.",
+    "pt": "Número de Telefone é obrigatório."
+  },
+  "error_valid_phone_number":
+  {
+    "en": "Please enter a valid Phone Number.",
+    "pt": "Por favor introduza um Número de Telefone válido."
+  },
+  "duration":
+  {
+    "en": "Duration",
+    "pt": "Duração"
+  }
+}

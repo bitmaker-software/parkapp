@@ -1,0 +1,5 @@
+<h2>New Reservation</h2>
+
+<%= render "form.html", Map.put(assigns, :action, mock_reservation_path(@conn, :create)) %>
+
+<span><%= link "Back", to: mock_reservation_path(@conn, :index) %></span>

@@ -1,0 +1,60 @@
+<h2>Show Reservation</h2>
+
+<ul>
+  <li>
+    <strong>Device:</strong>
+    <%= @reservation.device_id %>
+  </li>
+
+  <li>
+    <strong>Barcode:</strong>
+    <%= @reservation.barcode %>
+  </li>
+  <li>
+    <strong>Locator:</strong>
+    <%= @reservation.locator %>
+  </li>
+  <li>
+    <strong>Status:</strong>
+    <%= @reservation.reservation_status_id %>
+  </li>
+  <li>
+    <strong>Type:</strong>
+    <%= @reservation.reservation_type_id %>
+  </li>
+  <li>
+    <strong>Cancelled:</strong>
+    <%= @reservation.cancelled %>
+  </li>
+  <li>
+    <strong>Cancelled at:</strong>
+    <%= @reservation.cancelled_at %>
+  </li>
+  <li>
+    <strong>Reservation start time:</strong>
+    <%= @reservation.reservation_start_time %>
+  </li>
+  <li>
+    <strong>Payment1 time:</strong>
+    <%= @reservation.payment1_time %>
+  </li>
+  <li>
+    <strong>Parking start time:</strong>
+    <%= @reservation.parking_start_time %>
+  </li>
+  <li>
+    <strong>Parking payment time:</strong>
+    <%= @reservation.parking_payment_time %>
+  </li>
+  <li>
+    <strong>Context token:</strong>
+    <%= @reservation.context_token %>
+  </li>
+  <li>
+    <strong>Amount:</strong>
+    <%= @reservation.amount %>
+  </li>
+</ul>
+
+<span><%= link "Edit", to: mock_reservation_path(@conn, :edit, @reservation) %></span>
+<span><%= link "Back", to: mock_reservation_path(@conn, :index) %></span>
